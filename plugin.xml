@@ -42,6 +42,20 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:required="True" />
             <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:required="True" />
             <uses-feature android:name="android.hardware.location.gps" />
+            
+          <receiver
+                android:name="com.google.android.gms.location"
+                android:permission="android.permission.access_coarse_location" 
+                android:enabled="true"
+                android:exported="true">
+                <!--<intent-filter>
+                    <action android:name="com.google.android.gms.location.locationrequest" />
+                </intent-filter>-->
+                 <intent-filter>
+                    <action android:name="com.google.android.gms.location.locationrequest"/>
+                 </intent-filter>
+            </receiver>
+          
         </config-file>
 
         <config-file target="res/xml/config.xml" parent="/*">
